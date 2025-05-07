@@ -1,33 +1,23 @@
-const BASE_URL = "http://localhost:3001";
+// Зберігає бронювання для конкретного фільму
+export const saveBooking = (movieId, booking) => {
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || {};
 
-export const getBookingsByMovieId = async (movieId) => {
-  const res = await fetch(`${BASE_URL}/bookings?movieId=${movieId}`);
-  return res.json();
+  // Якщо немає бронювань для цього фільму, створюємо новий масив
+  if (!bookings[movieId]) {
+    bookings[movieId] = [];
+  }
+
+  // Додаємо нове бронювання
+  bookings[movieId].push({ ...booking, date: new Date() });
+
+  // Зберігаємо всі бронювання назад у localStorage
+  localStorage.setItem("bookings", JSON.stringify(bookings));
 };
 
-export const createBooking = async (booking) => {
-  const res = await fetch(`${BASE_URL}/bookings`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(booking),
-  });
-  return res.json();
-};
+// Отримуємо заброньовані місця для конкретного фільму
+export const getBookings = (movieId) => {
+  const bookings = JSON.parse(localStorage.getItem("bookings")) || {};
 
-export const deleteBooking = async (id) => {
-  await fetch(`${BASE_URL}/bookings/${id}`, { method: "DELETE" });
-};
-
-export const updateBooking = async (id, updatedBooking) => {
-  const res = await fetch(`${BASE_URL}/bookings/${id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(updatedBooking),
-  });
-  return res.json();
-};
-
-export const getAllBookings = async () => {
-  const res = await fetch(`${BASE_URL}/bookings`);
-  return res.json();
+  // Повертаємо заброньовані місця тільки для поточного фільму
+  return bookings[movieId] ? bookings[movieId] : [];
 };
