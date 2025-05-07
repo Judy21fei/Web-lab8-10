@@ -6,7 +6,7 @@ export const movies = [
       "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
     genre: "Adventure, Drama, Sci-Fi",
     poster: "/posters/interstellar.jpg",
-    sessionDate: "2025-04-29 20:00",
+    time: "2025-04-29 20:00",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const movies = [
       "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
     genre: "Drama, Romance",
     poster: "/posters/titanic.jpg",
-    sessionDate: "2025-05-01 18:00",
+    time: "2025-05-01 18:00",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const movies = [
       "Captain Jack Sparrow is trapped in Davy Jones' locker, and his friends must rescue him while facing the East India Trading Company.",
     genre: "Action, Adventure, Fantasy",
     poster: "/posters/pirates.jpg",
-    sessionDate: "2025-05-03 21:00",
+    time: "2025-05-03 21:00",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const movies = [
       "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
     genre: "Action, Adventure, Sci-Fi",
     poster: "/posters/inception.jpg",
-    sessionDate: "2025-05-05 19:00",
+    time: "2025-05-05 19:00",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export const movies = [
       "Sparks fly when spirited Elizabeth Bennet meets single, rich, and proud Mr. Darcy.",
     genre: "Drama, Romance",
     poster: "/posters/pride_and_prejudice.jpg",
-    sessionDate: "2025-05-07 17:00",
+    time: "2025-05-07 17:00",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const movies = [
       "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
     genre: "Action, Adventure, Drama",
     poster: "/posters/avengers_endgame.jpg",
-    sessionDate: "2025-05-09 20:00",
+    time: "2025-05-09 20:00",
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const movies = [
       "Political pressure mounts to install a system of accountability when the actions of the Avengers lead to collateral damage. The new status quo deeply divides friends and heroes.",
     genre: "Action, Adventure, Sci-Fi",
     poster: "/posters/captain_civil_war.jpg",
-    sessionDate: "2025-05-11 18:00",
+    time: "2025-05-11 18:00",
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const movies = [
       "When Hiccup discovers Toothless isn't the only dragon of his kind, he must seek out an elusive dragon rider to protect their home.",
     genre: "Animation, Action, Adventure",
     poster: "/posters/howtotrainyourdragon.jpg",
-    sessionDate: "2025-05-13 16:00",
+    time: "2025-05-13 16:00",
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const movies = [
       "Harry finds himself mysteriously selected as an under-aged competitor in a dangerous multi-wizardary school competition.",
     genre: "Adventure, Family, Fantasy",
     poster: "/posters/harry_potter.jpg",
-    sessionDate: "2025-05-15 19:00",
+    time: "2025-05-15 19:00",
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const movies = [
       "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda.",
     genre: "Action, Adventure, Fantasy",
     poster: "/posters/star_wars.jpg",
-    sessionDate: "2025-05-17 21:00",
+    time: "2025-05-17 21:00",
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export const movies = [
       "Eight years after the Joker's reign of anarchy, the Dark Knight is forced from his exile to save Gotham",
     genre: "Action, Crime, Drama",
     poster: "/posters/dark_knight_rises.jpg",
-    sessionDate: "2025-05-19 20:00",
+    time: "2025-05-19 20:00",
   },
   {
     id: 12,
@@ -105,6 +105,34 @@ export const movies = [
       "A working-class Italian-American bouncer becomes the driver of an African-American classical pianist on a tour of venues through the 1960s American South.",
     genre: "Biography, Comedy, Drama",
     poster: "/posters/green_book.jpg",
-    sessionDate: "2025-05-21 18:00",
+    time: "2025-05-21 18:00",
+  },
+  {
+    id: 13,
+    title: "Rise of the guardians",
+    description:
+      "When an evil spirit known as Pitch lays down the gauntlet to take over the world, the immortal Guardians join forces to protect the hopes, beliefs and imagination of children all over the world.",
+    genre: "Animation, Action, Adventure",
+    poster: "/posters/rise_of_the_guardians.jpg",
+    time: "2025-05-23 16:00",
+  },
+  {
+    id: 14,
+    title: "Charlie and the Chocolate Factory",
+    description:
+      "When Willy Wonka decides to let five children into his factory, Charlie Bucket is one of the lucky few. But what will happen when they get there?",
+    genre: "Adventure, Comedy, Family",
+    poster: "/posters/chocolate_factory.jpg",
+    time: "2025-05-23 16:00",
+  },
+  {
+    id: 15,
+    title: "In Time",
+    description:
+      " In a future where people stop aging at 25, but are engineered to live only one more",
+    genre: "Action, Sci-Fi, Thriller",
+
+    poster: "/posters/in_time.jpg",
+    time: "2025-05-25 18:00",
   },
 ];
