@@ -1,19 +1,27 @@
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { movies } from "../data/movies";
 import CinemaHall from "../components/CinemaHall";
-
-function Booking() {
+import "./Booking.css";
+const Booking = () => {
   const { id } = useParams();
-  const movie = movies.find((m) => m.id === id);
+  const [movie, setMovie] = useState(null);
 
-  if (!movie) return <p>Movie not found.</p>;
+  useEffect(() => {
+    const selectedMovie = movies.find((movie) => movie.id === parseInt(id));
+    setMovie(selectedMovie);
+  }, [id]);
+
+  if (!movie) {
+    return <div>Завантаження...</div>;
+  }
 
   return (
-    <div>
-      <h1>Booking for {movie.title}</h1>
-      <CinemaHall />
+    <div className="booking">
+      <h1>Бронювання для {movie.title}</h1>
+      <CinemaHall movieId={movie.id} />
     </div>
   );
-}
+};
 
 export default Booking;
