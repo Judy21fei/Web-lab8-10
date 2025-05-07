@@ -1,6 +1,50 @@
-body {
-  font-family: Arial, sans-serif;
+/* Загальні стилі для всього додатка */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Мобільний адаптивний дизайн */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
 }
