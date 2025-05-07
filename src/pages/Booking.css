@@ -1,62 +1,67 @@
-.booking {
-  text-align: center;
-  padding: 40px 0;
+.booking-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
-.booking h1 {
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-
-.cinema-hall {
-  margin-top: 40px;
-}
-
-.seats-grid {
+.seats-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 10px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .seat {
-  width: 40px;
-  height: 40px;
-  background-color: green;
-  border: 1px solid #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #eee;
+  text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  transition: background-color 0.3s;
 }
 
 .seat.selected {
-  background-color: blue;
+  background-color: #4caf50;
+  color: white;
 }
 
-.seat.available {
-  background-color: green;
+.seat.booked {
+  background-color: #f44336;
+  color: white;
+  cursor: not-allowed;
 }
 
-.seat:hover {
-  opacity: 0.7;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.selected-seats {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+.form-container input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-/* Адаптивність для мобільних пристроїв */
-@media (max-width: 768px) {
-  .seats-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 місця в рядку на мобільних */
-  }
+.form-container button {
+  padding: 12px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  .booking h1 {
-    font-size: 28px;
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+  .seats-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
