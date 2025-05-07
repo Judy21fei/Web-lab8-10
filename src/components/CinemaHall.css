@@ -1,0 +1,53 @@
+.cinema-hall {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.seat.selected {
+  background-color: blue;
+}
+
+.seat.available {
+  background-color: green;
+}
+
+.seat:hover {
+  background-color: #ffeb3b;
+  opacity: 0.8;
+}
+
+.selected-seats {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 768px) {
+  .seats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
