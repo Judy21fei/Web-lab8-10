@@ -1,0 +1,62 @@
+.booking {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.booking h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.cinema-hall {
+  margin-top: 40px;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  background-color: green;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seat.selected {
+  background-color: blue;
+}
+
+.seat.available {
+  background-color: green;
+}
+
+.seat:hover {
+  opacity: 0.7;
+}
+
+.selected-seats {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .seats-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 місця в рядку на мобільних */
+  }
+
+  .booking h1 {
+    font-size: 28px;
+  }
+}
