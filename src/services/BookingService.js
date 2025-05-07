@@ -1,23 +1,16 @@
-// Зберігає бронювання для конкретного фільму
-export const saveBooking = (movieId, booking) => {
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+const BOOKINGS_KEY = "movieBookings";
 
-  // Якщо немає бронювань для цього фільму, створюємо новий масив
-  if (!bookings[movieId]) {
-    bookings[movieId] = [];
-  }
+export const BookingService = {
+  saveBooking(movieId, seats, userData) {
+    const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY)) || {};
+    bookings[movieId] = bookings[movieId] || [];
+    bookings[movieId].push({ seats, userData });
+    localStorage.setItem(BOOKINGS_KEY, JSON.stringify(bookings));
+  },
 
-  // Додаємо нове бронювання
-  bookings[movieId].push({ ...booking, date: new Date() });
-
-  // Зберігаємо всі бронювання назад у localStorage
-  localStorage.setItem("bookings", JSON.stringify(bookings));
-};
-
-// Отримуємо заброньовані місця для конкретного фільму
-export const getBookings = (movieId) => {
-  const bookings = JSON.parse(localStorage.getItem("bookings")) || {};
-
-  // Повертаємо заброньовані місця тільки для поточного фільму
-  return bookings[movieId] ? bookings[movieId] : [];
+  getBookedSeats(movieId) {
+    const bookings = JSON.parse(localStorage.getItem(BOOKINGS_KEY)) || {};
+    const movieBookings = bookings[movieId] || [];
+    return movieBookings.flatMap((b) => b.seats);
+  },
 };
