@@ -1,25 +1,48 @@
-import { useState } from "react";
-import { movies } from "../data/movies";
-import MovieList from "../components/MovieList";
-
-function Home() {
+import React, { useState } from "react";
+import { movies } from "../data/movies"; // виправлений шлях до movies.js
+import MovieCard from "../components/MovieCard"; // виправлений шлях до MovieCard
+import "./Home.css";
+const Home = () => {
   const [query, setQuery] = useState("");
-  const filtered = movies.filter((m) =>
-    m.title.toLowerCase().includes(query.toLowerCase())
-  );
+  const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  const handleSearch = (e) => {
+    const searchQuery = e.target.value;
+    setQuery(searchQuery);
+
+    if (!searchQuery) {
+      setFilteredMovies(movies); // Якщо немає запиту, показуємо всі фільми
+    } else {
+      const filtered = movies.filter((movie) =>
+        movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredMovies(filtered);
+    }
+  };
 
   return (
-    <div>
-      <h1>Now Showing</h1>
-      <input
-        type="text"
-        placeholder="Search by title..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <MovieList movies={filtered} />
+    <div className="home">
+      <h1>Виберіть фільм</h1>
+
+      {/* Поле пошуку */}
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Пошук фільмів..."
+          value={query}
+          onChange={handleSearch}
+          className="search-input"
+        />
+      </div>
+
+      {/* Відображення фільмів */}
+      <div className="movie-list">
+        {filteredMovies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default Home;
