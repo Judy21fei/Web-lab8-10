@@ -13,7 +13,7 @@ const CinemaHall = ({ movieId }) => {
     });
   };
 
-  const totalSeats = 20; // Приклад, можна зробити динамічним
+  const totalSeats = 20;
 
   return (
     <div className="cinema-hall">
