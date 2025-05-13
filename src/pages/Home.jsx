@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { movies } from "../data/movies"; // виправлений шлях до movies.js
-import MovieCard from "../components/MovieCard"; // виправлений шлях до MovieCard
+import { movies } from "../data/movies"; 
+import MovieCard from "../components/MovieCard"; 
 import "./Home.css";
 const Home = () => {
   const [query, setQuery] = useState("");
